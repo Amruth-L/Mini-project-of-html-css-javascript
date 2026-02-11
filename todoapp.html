@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MY FIRST TO-DO application</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+        }
+        .h1{
+            border:2px solid palevioletred;
+            background-color:bisque;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color:black;
+            margin-top: 40px;
+        }
+        .container{
+           margin:20px;
+        }
+input{
+    margin-top: 80px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius:12px;
+    outline: none;
+}
+button{
+    padding:5px 5px;
+    border-radius:12px;
+    color:white;
+    background-color:olive;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+button:hover { opacity: 0.8; }
+
+button[onclick="addtodo()"] 
+{ background-color: #4CAF50; 
+    color: white; }
+
+.todo-item {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.edit-btn{
+    background-color:green;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+
+}
+.delete-btn{
+    background-color: crimson;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.button-group{
+    display: flex;
+    margin-left: 3px;
+}
+    </style>
+    </head>
+    <body>
+        <div class="bod">
+        <h1 class="h1"> My todo application</h1>
+   <div class="container">
+        <input type="text" id="todoInput" placeholder="What needs to be done?"></input>
+   <button onclick="addtodo()">ADD TO-DO</button>
+</div>
+<div id="todolist"></div>
+<script>
+    let cnt=1;
+    function addtodo(){ 
+        const btnGroup=document.createElement("div");
+        btnGroup.className="button-group";
+        const inputField=document.querySelector("input");
+        const value=inputField.value;
+        if(value==="")return;//for not adding empty task
+const div=document.createElement("div");
+div.className="todo-item";//class for styling 
+const span=document.createElement("span");
+span.innerHTML=cnt+"."+value;
+cnt++;
+// delete button //
+const delBtn=document.createElement("button");
+delBtn.innerHTML="Delete";
+delBtn.className="delete-btn";
+delBtn.onclick=function(){
+    div.remove();
+};
+//edit button
+const edtBtn=document.createElement("button");
+edtBtn.innerHTML="Edit";
+edtBtn.className="edit-btn";
+edtBtn.onclick=function(){
+    if(edtBtn.innerHTML==="Edit"){
+        const editInput=document.createElement("input");
+      editInput.type="text";
+      editInput.value=span.innerHTML;
+      div.replaceChild(editInput,span);
+      edtBtn.innerHTML="Save";
+    }
+    else{
+const newText=div.querySelector("input[type='text']").value;
+span.innerHTML=newText;
+div.replaceChild(span,div.querySelector("input[type='text']"));
+edtBtn.innerHTML="Edit";   
+}
+};
+div.appendChild(span);
+btnGroup.appendChild(edtBtn);
+btnGroup.appendChild(delBtn);
+div.appendChild(btnGroup);
+
+    document.getElementById("todolist").appendChild(div);
+inputField.value="";
+    }
+ </script>
+    </body>
+</html>
