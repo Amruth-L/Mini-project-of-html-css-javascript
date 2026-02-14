@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> feed back form </title>
+<style>
+body{
+    display: flex;
+    justify-content: center;
+    background-color: burlywood;
+}
+h1
+    #submit{
+        color:green;
+        cursor: pointer;
+        padding: 10px 15px;
+        border: 1px solid green;
+        background-color: white;
+    }
+  #submit:hover{
+color: white;
+background-color: green;
+    }
+</style>
+</head>
+<body>
+    <form>
+        <h1 class ="feeback"> Feedback Form </h1>
+<label for ="name ">Full Name:</label><br>
+<input type="text"  id ="name " name="name" placeholder="Enter your name " required>
+<br><br>
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" placeholder="Enter your email " required>
+<br><br>
+<label for="Phone Number">Phone number:</label><br>
+<input type="number" id="number" name="number" placeholder="Enter your phone number " required>
+<br><br>
+
+<label for="message">Message:</label><br>
+<textarea id="message" name="message" rows="5" cols="30" placeholder="Type your messages"></textarea><br><br>
+<button type="submit" id="submit">Send Message </button><br><br>
+</form>
+</body>
+</html>
