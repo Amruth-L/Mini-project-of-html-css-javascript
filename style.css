@@ -1,0 +1,72 @@
+:root{
+    --pri:#44A194;
+    --sec:#F4F0E4;
+    --tri:#EC8F8D;
+}
+
+
+@font-face{
+    font-family: bold;
+    font-weight: 200;
+    src:url(./Aeonik-Bold.ttf)
+}
+@font-face{
+    font-family: light;
+    font-weight:500;
+    src:url(./Aeonik-Light.ttf)
+}
+@font-face{
+    font-family: regular;
+    font-weight: 700;
+    src:url(./Aeonik-Regular.ttf)
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+
+}
+body{
+background-color: var(--tri);
+}
+/* Main blog card */
+#main{
+max-width: 800px;
+margin:60px auto;
+background-color: var(--sec);
+padding:40px;
+border-radius: 14px;
+}
+/* Typography */
+h1{
+    font-family:bold;
+    color: var(--pri);
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+h2{
+    font-family: bold;
+    color: var(--pri);
+}
+p,li{
+    font-family: light;
+    line-height: 1.8;
+    color: #333;
+}
+.author{
+    margin-bottom: 25px;
+}
+blockquote{
+    margin-top: 30px;
+
+}
+.tags span{
+    background-color: var(--pri);
+    color:white;
+    padding: 4px 14px;
+    margin:5px;
+    display: inline-block;
+    border-radius: 20px;
+    font-family: light;
+    font-size: 14px;
+}
