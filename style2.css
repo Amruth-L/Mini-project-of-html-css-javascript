@@ -1,69 +1,92 @@
-:root{
-    --pri:#44A194;
-    --sec:orange;
-    --tri:#EC8F8D;
+:root {
+    --pri: #44A194;
+    --sec: orange;
+    --tri: #EC8F8D;
 }
 
 /* FONTS */
 
-@font-face{
+@font-face {
     font-family: "bold";
-    src:url(./Aeonik-Bold.ttf);
+    src: url(./Aeonik-Bold.ttf);
 }
 
-@font-face{
+@font-face {
     font-family: "light";
-    src:url(./Aeonik-Light.ttf);
+    src: url(./Aeonik-Light.ttf);
 }
 
-@font-face{
+@font-face {
     font-family: "regular";
-    src:url(./Aeonik-Regular.ttf);
+    src: url(./Aeonik-Regular.ttf);
 }
-body{
+
+body {
     height: 100%;
     width: 100%;
 }
-#main{
-min-height: 100vh;
-background-color: var(--sec);
+
+#main {
+    min-height: 100vh;
+    background-color: var(--sec);
 }
+
 /* RESET */
 
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     font-family: aeonik;
-    color: pr;
-
 }
 
 /* NAVBAR */
 
-nav{
+nav {
     position: fixed;
-    width:100%;
-    height:60px;
-    background-color: var(--tri);
-    display:flex;
-    align-items:center;
-    padding-left:20px;
-    font-family: bold;
-    color:white;
-}
-section.allElems{
-    height:100%;
     width: 100%;
-    padding:40px;
-    padding-top:60PX;
-    display:flex;
- flex-wrap: wrap;
- align-items: flex-start;
- gap:20px;
+    height: 80px;
+    background-color: var(--tri);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-family: bold;
+    color: white;
 }
-.elemn{
-background-color:var(--pri);
-padding: 30px 40px;
-border-radius: 20px;
+
+section.allElems {
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    padding-top: 60PX;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.elems {
+    background-color: var(--pri);
+    font-size: 30px;
+    border-radius: 20px;
+    height: 300px;
+    width: 200px;
+    transition: all ease 0.2s;
+
+}
+
+.elems img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.elems h2 {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.elems:active {
+    scale: 0.97;
 }

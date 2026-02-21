@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: aeonik;
+    src: url(./Aeonik-Bold.ttf);
+    background: #f444f4;
+    padding: 20px;
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+    background-color: beige;
+    border-radius: 20px;
+
+}
+
+/* Grid container */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.gallery:hover {
+    transform: scale(1.2ma);
+}
+
+/* 
+.wide {
+    grid-column: span 2;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2; 
+} 
+*/
+
+/* @media(max-width:600px) and (max-width:900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
+
+
+@media(min-width:601px)and(max-width:900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-style {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.theme-box {
+    display: none;
+    margin-top: 10px;
+}
+
+.theme-box button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dark {
+    background: #111;
+    color: white;
+}
+
+.light {
+    background: white;
+    color: black;
+}
